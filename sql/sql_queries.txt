@@ -28,7 +28,7 @@ ORDER BY PRICE DESC;
 
 SELECT COUNT(*) AS CancelledOrders
 FROM orders
-WHERE ORDERSTATUS = 'Cancelled')
+WHERE ORDERSTATUS = 'Cancelled'
 
 -- Topic - Grouping and Aggregation
 -- Can you tell me how many orders we received from each shipping region?
