@@ -1,0 +1,81 @@
+
+Business Analyst SQL Questions:
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--  Topic - Basic Retrieval
+-- I want to quickly see a snapshot of the most recent 10 orders. Can you retrieve all their details for me?
+
+SELECT * 
+FROM orders 
+LIMIT 10;
+
+-- Topic - Filtering Rows
+-- Can you help me find all the orders that are currently in a 'Pending' status? I want to follow up on them.
+
+SELECT * 
+FROM orders
+WHERE ORDERSTATUS = 'Pending';
+
+-- Topic - Sorting Rows
+-- I’d like to see which orders had the highest price. Could you sort the entire order list by price, starting from the most expensive?
+
+SELECT *
+FROM orders
+ORDER BY PRICE DESC;
+
+-- Topic - Aggregate Functions
+-- How many orders ended up being cancelled? Just a quick count is fine.
+
+SELECT COUNT(*) AS CancelledOrders
+FROM orders
+WHERE ORDERSTATUS = 'Cancelled')
+
+-- Topic - Grouping and Aggregation
+-- Can you tell me how many orders we received from each shipping region?
+
+SELECT SHIPPEDREGION, COUNT(*) AS OrderCount
+FROM orders
+GROUP BY SHIPPEDREGION
+
+-- Topic - Filtering Groups (Having)
+-- I only care about regions where we received more than 15000 orders. Can you show me just those?
+
+SELECT SHIPPEDREGION, COUNT(*) AS OrderCount
+FROM orders
+GROUP BY SHIPPEDREGION
+HAVING COUNT(*) > 15000;
+
+-- Topic - Data Transformation
+-- For each order, I want to see the total amount spent (quantity multiplied by price).
+
+SELECT ORDERID, CUSTOMERNAME, PRODUCT, QUANTITY, PRICE, (QUANTITY * PRICE) AS TotalAmount
+FROM orders;
+
+-- Topic - String Filtering
+-- I want a list of customers whose names start with 'H'.
+
+SELECT *
+FROM orders
+WHERE CUSTOMERNAME LIKE 'H%';
+
+-- Topic - Date Filtering
+-- Can you get all the orders that were placed after January 1st, 2022?
+
+SELECT *
+FROM orders
+WHERE ORDERDATE > '2022-01-01';
+
+-- Topic - Materialized Views
+-- Let’s speed up region-wise revenue queries. Can you build a materialized view that stores total revenue by shipping region?
+
+CREATE MATERIALIZED VIEW region_revenue AS 
+SELECT SHIPPEDREGION, SUM(QUANTITY * PRICE) AS total_revenue
+FROM orders
+GROUP BY SHIPPEDREGION;
+
+-- Topic - Window Functions
+--  want to know which order is ranked highest in price within each shipping region. Can you rank them?
+
+SELECT ORDERID, CUSTOMERNAME, PRODUCT, PRICE, SHIPPEDREGION,
+       RANK() OVER (PARTITION BY SHIPPEDREGION ORDER BY PRICE DESC) AS PriceRank
+FROM orders;

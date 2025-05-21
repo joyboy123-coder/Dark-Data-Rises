@@ -1,0 +1,12 @@
+# Data Manipulation
+pandas            
+
+# Text to Number Conversion
+word2number  
+
+# Snowflake Connector
+# snowflake-connector-python    # To connect Python to Snowflake databases
+
+#Visualization
+# matplotlib 
+
