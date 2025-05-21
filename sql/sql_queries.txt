@@ -38,12 +38,12 @@ FROM orders
 GROUP BY SHIPPEDREGION;
 
 -- Topic - Filtering Groups (Having)
--- I only care about regions where we received more than 15000 orders. Can you show me just those?
+-- I only care about regions where we received more than 21000 orders. Can you show me just those?
 
 SELECT SHIPPEDREGION, COUNT(*) AS OrderCount
 FROM orders
 GROUP BY SHIPPEDREGION
-HAVING COUNT(*) > 15000;
+HAVING COUNT(*) > 21000;
 
 -- Topic - Data Transformation
 -- For each order, I want to see the total amount spent (quantity multiplied by price).
