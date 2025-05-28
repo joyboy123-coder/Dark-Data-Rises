@@ -1,6 +1,6 @@
-# 📊 Data Insights Project – ETL to Snowflake to SQL to Visualization
+# 📊 ETL to Snowflake to SQL to Visualization
 
-Welcome to the **Data Insights Project**! This project demonstrates a full data pipeline — from raw data to valuable insights and beautiful charts.
+This project demonstrates a full data pipeline — from raw data to valuable insights and beautiful charts.
 
 ---
 
@@ -52,7 +52,7 @@ This folder contains screenshots of the project stages:
 
 Contains SQL questions and solutions to analyze the data after it’s loaded into Snowflake.
 
-- Each SQL file focuses on a specific topic (e.g., filtering, aggregation, joins, window functions, etc.)  
+- Each SQL file focuses on a specific topic (e.g., filtering, aggregation, window functions, etc.)  
 - Run them after ETL to explore insights from your cleaned data ✅
 
 ---

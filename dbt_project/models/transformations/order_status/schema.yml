@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: pending_orders
+    description: "Contains only orders with status Pending"
+    tests:
+      - is_pending
+
+  - name: shipped_orders
+    description: "Contains only orders with status Shipped"
+    tests:
+      - is_shipped
+
+  - name: delivered_orders
+    description: "Contains only orders with status Delivered"
+    tests:
+      - is_delivered
+
+  - name: cancelled_orders
+    description: "Contains only orders with status Cancelled"
+    tests:
+      - is_cancelled

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: delivered_north
+    description: Model containing all orders delivered to the North region.
+    tests:
+      - is_delivered_north
+
+  - name: delivered_south
+    description: Model containing all orders delivered to the South region.
+    tests:
+      - is_delivered_south
+
+  - name: delivered_east
+    description: Model containing all orders delivered to the East region.
+    tests:
+      - is_delivered_east
+
+  - name: delivered_west
+    description: Model containing all orders delivered to the West region.
+    tests:
+      - is_delivered_west
+
+  - name: delivered_central
+    description: Model containing all orders delivered to the Central region.
+    tests:
+      - is_delivered_central

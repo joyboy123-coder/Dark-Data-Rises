@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: clean_orders
+    description: "This model cleans the raw orders data by filtering out null orderid, null customername, and negative prices. Also calculates total_amount as price * quantity."
+
+    columns:
+      - name: orderid
+        description: "Unique identifier for each order."
+        tests:
+          - not_null
+          - unique
+
+      - name: customername
+        description: "Name of the customer who placed the order."
+        tests:
+          - not_null
+
+      - name: product
+        description: "Name of the product ordered."
+        tests:
+          - not_null
+
+      - name: quantity
+        description: "Quantity of product ordered."
+        tests:
+          - not_null
+          - is_integer  # Custom test
+
+      - name: price
+        description: "Price per unit of the product."
+        tests:
+          - not_null
+          - price_more_than_zero  # Custom test
+          - is_float              # Custom test
+
+      - name: orderdate
+        description: "Date when the order was placed."
+        tests:
+          - not_null
+          - is_date  # Custom test
+
+      - name: shippedregion
+        description: "Region where the order was shipped (North, South, East, West, Central)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['North', 'South', 'East', 'West', 'Central']
+
+      - name: orderstatus
+        description: "Status of the order (Shipped, Cancelled, Pending, Delivered)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Shipped', 'Cancelled', 'Pending', 'Delivered']
+
+      - name: total_amount
+        description: "Total amount calculated as price multiplied by quantity."
+        tests:
+          - not_null
+          - is_float  # Custom test
+          - total_amount_more_than_zero  # Custom test
+

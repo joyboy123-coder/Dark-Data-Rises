@@ -1,0 +1,12 @@
+name: dark_data_rises
+version: '1.0'
+config-version: 2
+
+profile: dbt_project
+
+model-paths: ["models"]
+
+# Optional: tells dbt to include all files in the "models" directory
+models:
+  dark_data_rises:
+    +materialized: view

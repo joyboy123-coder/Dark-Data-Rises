@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: ORDERS_SCHEMA     # Replace this with your actual schema name
+    tables:
+      - name: orders
