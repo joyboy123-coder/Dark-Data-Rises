@@ -37,8 +37,3 @@ dbt run && dbt test && dbt docs generate && dbt docs serve
 
 ---
 
-✅ This will:
-- Run your transformations  
-- Run all 27 tests from macros  
-- Generate DBT docs  
-- Launch the docs in your browser
