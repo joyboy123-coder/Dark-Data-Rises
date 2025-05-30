@@ -5,11 +5,9 @@ import logging
 
 def main():
     raw_data = input('Enter Raw data file Path : ').strip('"')
-    table_name = input('Enter ur Table Name : ')
-
     data = extract_csv_data(raw_data)
     df = transform_data(data)
-    load(df,table_name)
+    load(df)
     logging.info('ETL Pipeline Finished Successfully :>')
 
 
