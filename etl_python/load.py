@@ -2,17 +2,22 @@ import pandas as pd
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
 import logging
+from dotenv import load_dotenv
+import os
 
-# Get Snowflake connection details from user
-user = input('🔐 Enter Snowflake user: ')
-password = input('🔑 Enter your Snowflake Password: ')
-account = input('🏢 Enter your Snowflake Account: ')
-warehouse = input('📦 Enter your Warehouse: ')
-database = input('🗃️ Enter your Database Name: ')
-schema = input('📂 Enter your Schema Name: ')
-print()
+# Load environment variables from .env file
+load_dotenv()
 
-def load(df,table_name):
+# Get Snowflake connection details from environment variables
+user = os.getenv('SNOWFLAKE_USER')
+password = os.getenv('SNOWFLAKE_PASSWORD')
+account = os.getenv('SNOWFLAKE_ACCOUNT')
+warehouse = os.getenv('SNOWFLAKE_WAREHOUSE')
+database = os.getenv('SNOWFLAKE_DATABASE')
+schema = os.getenv('SNOWFLAKE_SCHEMA')
+table = os.getenv('TABLE_NAME')
+
+def load(df):
     try:
         logging.info('\nData Loading\n')
         logging.info('Connecting to Snowflake')
@@ -31,7 +36,7 @@ def load(df,table_name):
         success, nchunks, nrows, _ = write_pandas(
             conn=conn,
             df=df,
-            table_name=table_name,
+            table_name=table,
             schema=schema,
             database=database,
             auto_create_table=True
@@ -39,7 +44,6 @@ def load(df,table_name):
         
         if success:
             logging.info(f'Uploaded {nrows} rows in Snowflake')
-
         else:
             logging.error('Upload Failed')
 
@@ -50,4 +54,3 @@ def load(df,table_name):
     finally:
         logging.info('Data Loading Completed')
         logging.info('--------------------------------------------\n')
-
