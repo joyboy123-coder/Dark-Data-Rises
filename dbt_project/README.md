@@ -34,3 +34,11 @@ To run all models, tests, and generate docs in one command sequence:
 ```bash
 dbt run && dbt test && dbt docs generate && dbt docs serve
 
+
+---
+
+✅ This will:
+- Run your transformations  
+- Run all 27 tests from macros  
+- Generate DBT docs  
+- Launch the docs in your browser
