@@ -1,0 +1,143 @@
+2025-05-28 21:50:01,260 - INFO - -------------------------------------------
+2025-05-28 21:50:01,261 - INFO - Extracting the Data :)
+
+2025-05-28 21:50:01,261 - INFO - Starting API Extraction from C:\Users\yamin\OneDrive\Dark-Data-Rises\data\raw_data.csv
+2025-05-28 21:50:01,520 - INFO - Extraction Succesfull
+2025-05-28 21:50:01,520 - INFO - ------------------------------------------------------
+2025-05-28 21:50:01,520 - INFO - 
+Data Transformation and Cleaning
+
+2025-05-28 21:50:01,520 - INFO - Removing Duplicate Rows :>
+2025-05-28 21:50:01,706 - INFO - Cleaning OrderID Column :>
+2025-05-28 21:50:01,708 - INFO - Cleaning CustomerName Column :>
+2025-05-28 21:50:01,978 - INFO - Cleaning Product Column :>
+2025-05-28 21:50:15,280 - INFO - Cleaning Quantity Column :>
+2025-05-28 21:50:15,527 - INFO - Cleaning Price Column :>
+2025-05-28 21:50:15,532 - INFO - Cleaning OrderDate Column :>
+2025-05-28 21:50:15,639 - INFO - Cleaning ShippedRegion Column :>
+2025-05-28 21:50:15,965 - INFO - Cleaning OrderStatus Column :>
+2025-05-28 21:50:16,290 - INFO - Converting all Column Names into Uppercase :>
+2025-05-28 21:50:16,291 - INFO - Transformation and Data Cleaning Successful :)
+2025-05-28 21:50:16,292 - INFO - ----------------------------------------------------------------
+2025-05-28 21:50:16,292 - INFO - 
+Data Loading
+
+2025-05-28 21:50:16,293 - INFO - Connecting to Snowflake
+2025-05-28 21:50:16,293 - INFO - Snowflake Connector for Python Version: 3.13.2, Python Version: 3.12.4, Platform: Windows-11-10.0.26100-SP0
+2025-05-28 21:50:16,294 - INFO - Connecting to GLOBAL Snowflake domain
+2025-05-28 21:50:16,295 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-05-28 21:50:19,399 - INFO - Loading Clean Data into Snowflake
+2025-05-28 21:50:37,950 - INFO - Uploaded 104785 rows in Snowflake
+2025-05-28 21:50:37,951 - INFO - Data Loading Completed
+2025-05-28 21:50:37,951 - INFO - --------------------------------------------
+
+2025-05-28 21:50:37,951 - INFO - ETL Pipeline Finished Successfully :>
+2025-05-28 21:50:37,965 - INFO - closed
+2025-05-28 21:50:37,966 - INFO - No async queries seem to be running, deleting session
+2025-05-30 20:40:16,440 - INFO - -------------------------------------------
+2025-05-30 20:40:16,441 - INFO - Extracting the Data :)
+
+2025-05-30 20:40:16,441 - INFO - Starting API Extraction from C:\Users\yamin\OneDrive\Dark-Data-Rises\data\raw_data.csv
+2025-05-30 20:40:16,687 - INFO - Extraction Succesfull
+2025-05-30 20:40:16,688 - INFO - ------------------------------------------------------
+2025-05-30 20:40:16,688 - INFO - 
+Data Transformation and Cleaning
+
+2025-05-30 20:40:16,688 - INFO - Removing Duplicate Rows :>
+2025-05-30 20:40:16,889 - INFO - Cleaning OrderID Column :>
+2025-05-30 20:40:16,890 - INFO - Cleaning CustomerName Column :>
+2025-05-30 20:40:17,158 - INFO - Cleaning Product Column :>
+2025-05-30 20:40:32,348 - INFO - Cleaning Quantity Column :>
+2025-05-30 20:40:32,654 - INFO - Cleaning Price Column :>
+2025-05-30 20:40:32,658 - INFO - Cleaning OrderDate Column :>
+2025-05-30 20:40:32,775 - INFO - Cleaning ShippedRegion Column :>
+2025-05-30 20:40:33,138 - INFO - Cleaning OrderStatus Column :>
+2025-05-30 20:40:33,516 - INFO - Converting all Column Names into Uppercase :>
+2025-05-30 20:40:33,517 - INFO - Transformation and Data Cleaning Successful :)
+2025-05-30 20:40:33,517 - INFO - ----------------------------------------------------------------
+2025-05-30 20:40:33,517 - INFO - 
+Data Loading
+
+2025-05-30 20:40:33,517 - INFO - Connecting to Snowflake
+2025-05-30 20:40:33,517 - INFO - Snowflake Connector for Python Version: 3.13.2, Python Version: 3.12.4, Platform: Windows-11-10.0.26100-SP0
+2025-05-30 20:40:33,519 - INFO - Connecting to GLOBAL Snowflake domain
+2025-05-30 20:40:33,519 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-05-30 20:40:43,183 - INFO - Loading Clean Data into Snowflake
+2025-05-30 20:40:51,313 - ERROR - Failed to Load Data into Snowflake : can only concatenate str (not "NoneType") to str
+2025-05-30 20:40:51,313 - INFO - Data Loading Completed
+2025-05-30 20:40:51,313 - INFO - --------------------------------------------
+
+2025-05-30 20:40:51,319 - INFO - closed
+2025-05-30 20:40:51,319 - INFO - No async queries seem to be running, deleting session
+2025-05-30 20:49:55,738 - INFO - -------------------------------------------
+2025-05-30 20:49:55,739 - INFO - Extracting the Data :)
+
+2025-05-30 20:49:55,739 - INFO - Starting API Extraction from C:\Users\yamin\OneDrive\Dark-Data-Rises\data\raw_data.csv
+2025-05-30 20:49:55,946 - INFO - Extraction Succesfull
+2025-05-30 20:49:55,946 - INFO - ------------------------------------------------------
+2025-05-30 20:49:55,946 - INFO - 
+Data Transformation and Cleaning
+
+2025-05-30 20:49:55,946 - INFO - Removing Duplicate Rows :>
+2025-05-30 20:49:56,093 - INFO - Cleaning OrderID Column :>
+2025-05-30 20:49:56,094 - INFO - Cleaning CustomerName Column :>
+2025-05-30 20:49:56,311 - INFO - Cleaning Product Column :>
+2025-05-30 20:50:08,059 - INFO - Cleaning Quantity Column :>
+2025-05-30 20:50:08,259 - INFO - Cleaning Price Column :>
+2025-05-30 20:50:08,264 - INFO - Cleaning OrderDate Column :>
+2025-05-30 20:50:08,339 - INFO - Cleaning ShippedRegion Column :>
+2025-05-30 20:50:08,597 - INFO - Cleaning OrderStatus Column :>
+2025-05-30 20:50:08,860 - INFO - Converting all Column Names into Uppercase :>
+2025-05-30 20:50:08,861 - INFO - Transformation and Data Cleaning Successful :)
+2025-05-30 20:50:08,861 - INFO - ----------------------------------------------------------------
+2025-05-30 20:50:08,862 - INFO - 
+Data Loading
+
+2025-05-30 20:50:08,862 - INFO - Connecting to Snowflake
+2025-05-30 20:50:08,863 - INFO - Snowflake Connector for Python Version: 3.13.2, Python Version: 3.12.4, Platform: Windows-11-10.0.26100-SP0
+2025-05-30 20:50:08,864 - INFO - Connecting to GLOBAL Snowflake domain
+2025-05-30 20:50:08,864 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-05-30 20:50:11,931 - INFO - Loading Clean Data into Snowflake
+2025-05-30 20:50:20,029 - INFO -  Uploaded 104785 rows to Snowflake table: ORDERS
+2025-05-30 20:50:20,030 - INFO -  Data Loading Completed
+2025-05-30 20:50:20,030 - INFO - --------------------------------------------
+
+2025-05-30 20:50:20,035 - INFO - ETL Pipeline Finished Successfully :>
+2025-05-30 20:50:20,050 - INFO - closed
+2025-05-30 20:50:20,050 - INFO - No async queries seem to be running, deleting session
+2025-05-30 20:57:08,794 - INFO - -------------------------------------------
+2025-05-30 20:57:08,794 - INFO - Extracting the Data :)
+
+2025-05-30 20:57:08,794 - INFO - Starting API Extraction from C:\Users\yamin\OneDrive\Dark-Data-Rises\data\raw_data.csv
+2025-05-30 20:57:08,997 - INFO - Extraction Succesfull
+2025-05-30 20:57:08,998 - INFO - ------------------------------------------------------
+2025-05-30 20:57:08,998 - INFO - 
+Data Transformation and Cleaning
+
+2025-05-30 20:57:08,998 - INFO - Removing Duplicate Rows :>
+2025-05-30 20:57:09,138 - INFO - Cleaning OrderID Column :>
+2025-05-30 20:57:09,139 - INFO - Cleaning CustomerName Column :>
+2025-05-30 20:57:09,359 - INFO - Cleaning Product Column :>
+2025-05-30 20:57:21,555 - INFO - Cleaning Quantity Column :>
+2025-05-30 20:57:21,759 - INFO - Cleaning Price Column :>
+2025-05-30 20:57:21,762 - INFO - Cleaning OrderDate Column :>
+2025-05-30 20:57:21,844 - INFO - Cleaning ShippedRegion Column :>
+2025-05-30 20:57:22,118 - INFO - Cleaning OrderStatus Column :>
+2025-05-30 20:57:22,379 - INFO - Converting all Column Names into Uppercase :>
+2025-05-30 20:57:22,380 - INFO - Transformation and Data Cleaning Successful :)
+2025-05-30 20:57:22,380 - INFO - ----------------------------------------------------------------
+2025-05-30 20:57:22,380 - INFO - 
+Data Loading
+
+2025-05-30 20:57:22,380 - INFO - Connecting to Snowflake
+2025-05-30 20:57:22,381 - INFO - Snowflake Connector for Python Version: 3.13.2, Python Version: 3.12.4, Platform: Windows-11-10.0.26100-SP0
+2025-05-30 20:57:22,382 - INFO - Connecting to GLOBAL Snowflake domain
+2025-05-30 20:57:22,382 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-05-30 20:57:25,778 - INFO - Loading Clean Data into Snowflake
+2025-05-30 20:57:43,495 - INFO -  Uploaded 104785 rows to Snowflake table: ORDERS
+2025-05-30 20:57:43,495 - INFO -  Data Loading Completed
+2025-05-30 20:57:43,495 - INFO - --------------------------------------------
+
+2025-05-30 20:57:43,498 - INFO - ETL Pipeline Finished Successfully :>
+2025-05-30 20:57:43,506 - INFO - closed
+2025-05-30 20:57:43,506 - INFO - No async queries seem to be running, deleting session

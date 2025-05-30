@@ -1,9 +1,12 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import os
 
-input_file = input('Enter cleaned output file : ').strip('"')
-df = pd.read_csv(input_file)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(BASE_DIR, 'data', 'cleaned_data.csv')
+
+df = pd.read_csv(data_path)
 
 sns.set(style="darkgrid")
 
