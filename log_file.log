@@ -141,3 +141,39 @@ Data Loading
 2025-05-30 20:57:43,498 - INFO - ETL Pipeline Finished Successfully :>
 2025-05-30 20:57:43,506 - INFO - closed
 2025-05-30 20:57:43,506 - INFO - No async queries seem to be running, deleting session
+2025-05-30 21:14:55,947 - INFO - -------------------------------------------
+2025-05-30 21:14:55,947 - INFO - Extracting the Data :)
+
+2025-05-30 21:14:55,947 - INFO - Starting API Extraction from C:\Users\yamin\OneDrive\Dark-Data-Rises\data\raw_data.csv
+2025-05-30 21:14:56,017 - INFO - Extraction Succesfull
+2025-05-30 21:14:56,018 - INFO - ------------------------------------------------------
+2025-05-30 21:14:56,018 - INFO - 
+Data Transformation and Cleaning
+
+2025-05-30 21:14:56,018 - INFO - Removing Duplicate Rows :>
+2025-05-30 21:14:56,074 - INFO - Cleaning OrderID Column :>
+2025-05-30 21:14:56,075 - INFO - Cleaning CustomerName Column :>
+2025-05-30 21:14:56,151 - INFO - Cleaning Product Column :>
+2025-05-30 21:15:05,115 - INFO - Cleaning Quantity Column :>
+2025-05-30 21:15:05,316 - INFO - Cleaning Price Column :>
+2025-05-30 21:15:05,319 - INFO - Cleaning OrderDate Column :>
+2025-05-30 21:15:05,401 - INFO - Cleaning ShippedRegion Column :>
+2025-05-30 21:15:05,666 - INFO - Cleaning OrderStatus Column :>
+2025-05-30 21:15:05,933 - INFO - Converting all Column Names into Uppercase :>
+2025-05-30 21:15:05,935 - INFO - Transformation and Data Cleaning Successful :)
+2025-05-30 21:15:05,935 - INFO - ----------------------------------------------------------------
+2025-05-30 21:15:05,935 - INFO - 
+Data Loading
+
+2025-05-30 21:15:05,935 - INFO - Connecting to Snowflake
+2025-05-30 21:15:05,936 - INFO - Snowflake Connector for Python Version: 3.13.2, Python Version: 3.12.4, Platform: Windows-11-10.0.26100-SP0
+2025-05-30 21:15:05,937 - INFO - Connecting to GLOBAL Snowflake domain
+2025-05-30 21:15:05,937 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-05-30 21:15:09,005 - INFO - Loading Clean Data into Snowflake
+2025-05-30 21:15:25,798 - INFO -  Uploaded 104785 rows to Snowflake table: ORDERS
+2025-05-30 21:15:25,799 - INFO -  Data Loading Completed
+2025-05-30 21:15:25,799 - INFO - --------------------------------------------
+
+2025-05-30 21:15:25,805 - INFO - ETL Pipeline Finished Successfully :>
+2025-05-30 21:15:25,815 - INFO - closed
+2025-05-30 21:15:25,816 - INFO - No async queries seem to be running, deleting session

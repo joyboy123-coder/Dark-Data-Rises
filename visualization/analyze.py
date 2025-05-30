@@ -4,7 +4,7 @@ import seaborn as sns
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-data_path = os.path.join(BASE_DIR, 'data', 'cleaned_data.csv')
+data_path = os.path.join(BASE_DIR, '..', 'data', 'cleaned_data.csv')
 
 df = pd.read_csv(data_path)
 
