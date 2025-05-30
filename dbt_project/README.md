@@ -1,15 +1,36 @@
-Welcome to your new dbt project!
+# 📦 DBT Project
 
-### Using the starter project
+This folder contains all DBT models, macros, custom tests, and documentation used in the data pipeline.
 
-Try running the following commands:
-- dbt run
-- dbt test
+---
 
+## 📁 models/
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### 1. `models/cleaning/`
+- Removes **duplicate rows** from raw data  
+- Performs basic cleaning (null handling, formatting)
+
+### 2. `models/transformations/`
+- Filters to only include rows with `order_status = 'delivered'`  
+- Splits output by `shipped_region`: north, south, east, west, central
+
+---
+
+## 🛠️ macros/
+- Includes custom **macros**  
+- Contains **27 tests** such as:
+  - not null  
+  - accepted values  
+  - unique constraints
+
+All tests are implemented using Jinja macros.
+
+---
+
+## 🚀 Run Everything in One Go
+
+To run all models, tests, and generate docs in one command sequence:
+
+```bash
+dbt run && dbt test && dbt docs generate && dbt docs serve
+
