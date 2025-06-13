@@ -1,5 +1,7 @@
 # 🌟 Dark Data Rises: ETL to Snowflake to Visualization
 
+![Dark Data Rises Thumbnail](images/thumbnail/thumbnail_image.png)
+
 A complete data pipeline project that transforms raw data into valuable insights through ETL, data warehousing, and interactive visualizations.
 
 ## 🎯 Project Overview
