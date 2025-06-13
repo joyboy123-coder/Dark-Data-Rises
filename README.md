@@ -1,6 +1,143 @@
-# 📊 ETL to Snowflake to SQL to Visualization
+# 🌟 Dark Data Rises: ETL to Snowflake to Visualization
 
-This project demonstrates a full data pipeline — from raw data to valuable insights and beautiful charts.
+A complete data pipeline project that transforms raw data into valuable insights through ETL, data warehousing, and interactive visualizations.
+
+## 🎯 Project Overview
+
+This project demonstrates a full data pipeline:
+- 📥 Extract data from CSV
+- 🔄 Transform and clean data
+- 📤 Load into Snowflake
+- 📊 Visualize with interactive dashboards
+
+## 🛠️ Tech Stack
+
+- **ETL**: Python
+- **Data Warehouse**: Snowflake
+- **Data Transformation**: dbt
+- **Visualization**: Plotly
+- **Testing**: dbt Tests
+- **Logging**: Python Logging
+
+## 📁 Project Structure
+
+```
+├── data/               # Data files
+│   ├── raw_data.csv
+│   └── cleaned_data.csv
+├── etl_python/         # ETL scripts
+├── dbt_project/        # dbt models and tests
+├── visualization/      # Interactive dashboards
+├── sql/               # SQL queries
+└── log_file.log       # Log file
+```
+
+## 🚀 Features
+
+### 1. ETL Pipeline
+- ✅ Data extraction from CSV
+- ✅ Data cleaning and transformation
+- ✅ Loading to Snowflake
+- ✅ Error handling and logging
+
+### 2. Data Quality
+- ✅ 27 dbt tests
+- ✅ Data validation
+- ✅ Logging system
+- ✅ Error tracking
+
+### 3. Visualization
+- ✅ Interactive Plotly dashboard
+- ✅ Product filters
+- ✅ Dark theme
+- ✅ HTML export
+
+## 🎨 Visualization Features
+
+- 📊 Bar chart with product quantities
+- 🥧 Pie chart for order status
+- 🔍 Interactive filters
+- 🎯 Hover tooltips
+- 💾 Export to HTML
+
+## 🧪 Testing
+
+- 27 dbt tests in macros folder
+- Data quality checks
+- Transformation tests
+- Clean table tests
+
+## 📈 Data Flow
+
+1. Raw Data → ETL Pipeline
+2. ETL Pipeline → Snowflake
+3. Snowflake → dbt Models
+4. dbt Models → Visualization
+
+## 🚀 Getting Started
+
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Run ETL pipeline:
+```bash
+python etl_pipeline.py
+```
+
+3. View visualizations:
+```bash
+cd visualization
+python analyze.py
+```
+
+4. Run dbt workflow:
+```bash
+cd dbt_project
+dbt run        # Run all models to ensure data is clean
+dbt test       # Run all 27 tests to validate data
+dbt docs generate  # Generate documentation
+dbt docs serve    # View documentation in browser
+```
+
+The complete workflow ensures:
+- ✅ Data is properly loaded (ETL)
+- ✅ Data is clean and transformed (dbt run)
+- ✅ All tests pass (dbt test)
+- ✅ Documentation is up to date (dbt docs)
+
+## 📊 Output
+
+- Cleaned data in Snowflake
+- Interactive HTML dashboard
+- Static PNG charts
+- Log file for tracking
+- dbt test results
+- dbt documentation
+
+## 🔍 Monitoring
+
+- Log file in root directory
+- dbt test results (27 tests)
+- ETL pipeline status
+- dbt documentation at http://localhost:8080
+
+## 🎯 Future Improvements
+
+1. Data quality monitoring dashboard
+2. Performance optimization
+3. Real-time data processing
+4. Enhanced documentation
+5. Data security features
+
+## 👥 Contributing
+
+Feel free to fork and contribute to this project!
+
+## 📝 License
+
+This project is open source and available under the MIT License.
 
 ---
 
@@ -50,7 +187,7 @@ This folder contains screenshots of the project stages:
 
 ## 📁 SQL Folder
 
-Contains SQL questions and solutions to analyze the data after it’s loaded into Snowflake.
+Contains SQL questions and solutions to analyze the data after it's loaded into Snowflake.
 
 - Each SQL file focuses on a specific topic (e.g., filtering, aggregation, window functions, etc.)  
 - Run them after ETL to explore insights from your cleaned data ✅
@@ -67,9 +204,8 @@ Includes `analyze.py` that visualizes data using:
 **To use:**
 
 1. Run `analyze.py`  
-2. When prompted, provide the path to `cleaned_data.csv` (from the `data` folder)  
-3. First a **bar graph** will appear  
-4. Close the graph window, and the **pie chart** will pop up next 🎉
+2. You will see interactive dashboard of "bar graph" and "pie chart" 
+3. for backup we have .png files seperately 🎉
 
 ---
 
@@ -79,7 +215,7 @@ Includes `analyze.py` that visualizes data using:
 2. ⚙️ Run `etl_pipeline.py` → This will extract, clean, and load data into **Snowflake**  
 3. 🔍 Open the **SQL folder** and try the SQL questions to analyze the loaded data  
 4. 📊 Run `analyze.py` in the **visualization folder**  
-   - Paste the path to `cleaned_data.csv` when asked  
+   - It will take u to a window and show you a interactive dashboard  
    - Enjoy bar and pie charts generated from the clean data!  
 
 ---
