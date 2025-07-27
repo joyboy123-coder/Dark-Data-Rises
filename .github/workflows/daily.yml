@@ -18,5 +18,12 @@ jobs:
           pip install -r requirements.txt || true
       - name: Run script
         env:  # ⬅️ Add this block
-          SNOWFLAKE_TABLE : PEOPLE  # ⬅️ Replace with actual table name
+          SNOWFLAKE_TABLE: PEOPLE  # ⬅️ Replace with actual table name
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
         run: python etl_pipeline.py
