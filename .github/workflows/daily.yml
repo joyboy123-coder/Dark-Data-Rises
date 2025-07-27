@@ -1,17 +1,17 @@
-name: Daily Job
+name: Daily Snowflake ETL
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "30 9 * * *"  # Runs every day at 3:00 PM IST (which is 9:30 AM UTC)
-  workflow_dispatch:      # Optional: allows manual run from GitHub UI
+    - cron: "0 3 * * *"  # Runs every day at 3 AM UTC
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -19,9 +19,12 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pandas snowflake-connector-python[secure-local-storage] snowflake-connector-python[pandas]
 
-      - name: Run Python ETL
+      - name: Run ETL Pipeline
         env:
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
@@ -30,5 +33,5 @@ jobs:
           SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
-          SNOWFLAKE_TABLE: ${{ secrets.SNOWFLAKE_TABLE }}
-        run: python etl_pipeline.py
+        run: |
+          python etl_pipeline.py
