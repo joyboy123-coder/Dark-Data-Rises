@@ -2,32 +2,33 @@ name: Daily Job
 
 on:
   schedule:
-    - cron: "30 9 * * *"  # ⏰ 3:00 PM IST daily
-  workflow_dispatch:
+    - cron: "30 9 * * *"  # Runs every day at 3:00 PM IST (which is 9:30 AM UTC)
+  workflow_dispatch:      # Optional: allows manual run from GitHub UI
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt || true
+        run: pip install -r requirements.txt
 
-      - name: Create .env file
-        run: |
-          echo "SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }}" >> .env
-          echo "SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }}" >> .env
-          echo "SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }}" >> .env
-          echo "SNOWFLAKE_DATABASE=${{ secrets.SNOWFLAKE_DATABASE }}" >> .env
-          echo "SNOWFLAKE_SCHEMA=${{ secrets.SNOWFLAKE_SCHEMA }}" >> .env
-          echo "SNOWFLAKE_WAREHOUSE=${{ secrets.SNOWFLAKE_WAREHOUSE }}" >> .env
-          echo "SNOWFLAKE_ROLE=${{ secrets.SNOWFLAKE_ROLE }}" >> .env
-          echo "SNOWFLAKE_TABLE=${{ secrets.SNOWFLAKE_TABLE }}" >> .env
-
-      - name: Run script
+      - name: Run Python ETL
+        env:
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+          SNOWFLAKE_TABLE: ${{ secrets.SNOWFLAKE_TABLE }}
         run: python etl_pipeline.py
