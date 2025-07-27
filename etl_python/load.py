@@ -32,7 +32,8 @@ def load(df):
             account=account,
             warehouse=warehouse,
             database=database,
-            schema=schema
+            schema=schema,
+            insecure_mode = True
         )
 
         logging.info('Loading Clean Data into Snowflake')
@@ -52,10 +53,10 @@ def load(df):
         if success:
             logging.info(f' Uploaded {nrows} rows to Snowflake table: {table}')
         else:
-            logging.error(' Upload Failed')
+            logging.error('Upload Failed')
 
     except Exception as e:
-        logging.error(f' Failed to Load Data into Snowflake: {e}')
+        logging.error(f'Failed to Load Data into Snowflake: {e}')
         raise
 
     finally:

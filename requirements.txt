@@ -11,3 +11,4 @@ snowflake-connector-python    # To connect Python to Snowflake databases
 matplotlib 
 seaborn
 plotly
+python-dotenv
