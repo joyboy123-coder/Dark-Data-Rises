@@ -17,9 +17,9 @@ database = os.getenv('SNOWFLAKE_DATABASE')
 schema = os.getenv('SNOWFLAKE_SCHEMA')
 table = os.getenv('SNOWFLAKE_TABLE')
 
-# ✅ Check for required table name
 if not table:
-    raise ValueError("❗ Environment variable TABLE_NAME is missing or empty.")
+    raise ValueError("❗ Environment variable SNOWFLAKE_TABLE is missing or empty.")
+
 
 def load(df):
     try:
