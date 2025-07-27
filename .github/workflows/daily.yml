@@ -18,5 +18,5 @@ jobs:
           pip install -r requirements.txt || true
       - name: Run script
         env:  # ⬅️ Add this block
-          TABLE_NAME: PEOPLE  # ⬅️ Replace with actual table name
+          SNOWFLAKE_TABLE : PEOPLE  # ⬅️ Replace with actual table name
         run: python etl_pipeline.py
