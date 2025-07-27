@@ -2,8 +2,8 @@ name: Daily Job
 
 on:
   schedule:
-    - cron: "30 9 * * *"  # runs at 3:00 PM IST daily
-  workflow_dispatch:      # lets you run it manually too
+    - cron: "30 9 * * *"  # ⏰ 3:00 PM IST daily
+  workflow_dispatch:      # Manual trigger
 
 jobs:
   run-script:
@@ -17,4 +17,6 @@ jobs:
         run: |
           pip install -r requirements.txt || true
       - name: Run script
+        env:  # ⬅️ Add this block
+          TABLE_NAME: PEOPLE  # ⬅️ Replace with actual table name
         run: python etl_pipeline.py
